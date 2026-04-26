@@ -1,4 +1,4 @@
-# AGENTS.md
+# AGENTS instructions
 
 This repository is a standalone checkout for developing Datagrok plugins
 and updating documentation for the `public` repository. 
@@ -12,8 +12,8 @@ instead of copying the repo.
 - Do not duplicate instructions from `CLAUDE.md` here. Follow it unless this file adds repo-specific constraints.
 
 ## Skills
-
-- Use the local skill mirror under `.claude/skills`, and follow the skill content from there.
+- To publish packages on the test enviroment, use the command `grok publish local`.
+- If nesessary, use the local skill mirror under `.claude/skills`, and follow the skill content from there.
 
 ## Standalone Repo Layout
 

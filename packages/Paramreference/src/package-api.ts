@@ -12,14 +12,18 @@ export namespace funcs {
     return await grok.functions.call('paramreference:Info', {});
   }
 
-  export async function bioreactorConfiguration(): Promise<any> {
-    return await grok.functions.call('paramreference:BioreactorConfiguration', {});
+  /**
+  Choose available bioreactor models and parameters - example of parameter referencing
+  */
+  export async function bioreactorConfiguration(bioreactor: string , impeller: string ): Promise<any> {
+    return await grok.functions.call('paramreference:BioreactorConfiguration', { bioreactor, impeller });
   }
 
-  /**
-  Get all available synthon spaces from Chem package files
-  */
   export async function listBioreactors(): Promise<any> {
     return await grok.functions.call('paramreference:ListBioreactors', {});
+  }
+
+  export async function listImpellers(): Promise<any> {
+    return await grok.functions.call('paramreference:ListImpellers', {});
   }
 }

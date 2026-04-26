@@ -14,7 +14,7 @@ export function info() {
 //tags: model, example
 //description: Choose available bioreactor models and parameters - example of parameter referencing
 //input: string bioreactor { choices: paramreference:ListBioreactors(); nullable: false }
-
+//input: string impeller { choices: paramreference:ListImpellers(@bioreactor); nullable: false }
 //output: object result
 export async function BioreactorConfiguration(
     bioreactor: string) {
@@ -22,8 +22,7 @@ export async function BioreactorConfiguration(
 
 }
 
-//name: Get Synthon Spaces
-//description: Get all available synthon spaces from Chem package files
+//name: ListBioreactors
 //output: list<string> result
 export async function ListBioreactors() : Promise<string[]> {
     try {
@@ -33,3 +32,18 @@ export async function ListBioreactors() : Promise<string[]> {
         return [];
     }
 }
+
+//name: ListImpellers
+//output: list<string> result
+export async function ListImpellers(bioreactor: string) : Promise<string[]> {
+    grok.shell.info(`Chosen bioreactor: ${bioreactor}`);
+    try {
+        let csv = await grok.dapi.files.readAsText(
+    `System:AppData/Paramreference/${bioreactor}.csv`
+        );
+        return csv.split('\n').slice(1);
+    } catch (_e) {
+        return [];
+    }
+}
+
