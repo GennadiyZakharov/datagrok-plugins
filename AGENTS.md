@@ -1,34 +1,32 @@
 # AGENTS.md
 
-This repository is a standalone checkout for personal Datagrok plugins. 
-It intentionally reuses selected files and directories from the main Datagrok `public` repository via symlinks 
-instead of copying the monorepo.
+This repository is a standalone checkout for developing Datagrok plugins
+and updating documentation for the `public` repository. 
+It reuses selected files and directories from the main Datagrok `public` repository via symlinks 
+instead of copying the repo.
 
 ## Primary Instructions
 
 - Treat `CLAUDE.md` as the main Datagrok development guide for build, publish, test, package structure, and platform conventions.
+- For each folder look for `CLAUDE.md` and `README.md` files and follow the instructions there. 
 - Do not duplicate instructions from `CLAUDE.md` here. Follow it unless this file adds repo-specific constraints.
 
 ## Skills
 
-- Use the local skill mirror under `.agents/skills`. Those entries are symlinks from `public/.claude/skills`, 
-  so read the local path and follow the skill content from there.
-- Relevant examples for routine work in this repo:
-  - .agents/skills/create-package/SKILL.md
-  - .agents/skills/add-package-tests/SKILL.md
-  - .agents/skills/test-package/SKILL.md
+- Use the local skill mirror under `.claude/skills`, and follow the skill content from there.
 
 ## Standalone Repo Layout
 
 This repo currently depends on these upstream symlinks:
 
-- [CLAUDE.md](/home/gena/programming/datagrok/datagrok-plugins/CLAUDE.md) -> `../public/CLAUDE.md`
-- [js-api](/home/gena/programming/datagrok/datagrok-plugins/js-api) -> `../public/js-api`
-- [tools](/home/gena/programming/datagrok/datagrok-plugins/tools) -> `../public/tools`
-- [hooks](/home/gena/programming/datagrok/datagrok-plugins/hooks) -> `../public/hooks`
-- [help](/home/gena/programming/datagrok/datagrok-plugins/help) -> `../public/help`
-- [commitlint.config.js](/home/gena/programming/datagrok/datagrok-plugins/commitlint.config.js) -> `../public/commitlint.config.js`
-- [globals.d.ts](/home/gena/programming/datagrok/datagrok-plugins/globals.d.ts) -> `../public/globals.d.ts`
+- [CLAUDE.md](datagrok-plugins/CLAUDE.md) -> `../public/CLAUDE.md`
+- [Skills](datagrok-plugins/.claude) -> `../public/.claude`
+- [js-api](datagrok-plugins/js-api) -> `../public/js-api`
+- [tools](datagrok-plugins/tools) -> `../public/tools`
+- [hooks](datagrok-plugins/hooks) -> `../public/hooks`
+- [help](datagrok-plugins/help) -> `../public/help`
+- [commitlint.config.js](commitlint.config.js) -> `../public/commitlint.config.js`
+- [globals.d.ts](globals.d.ts) -> `../public/globals.d.ts`
 
 ## Current Development Scope
 - Prefer the existing package scripts over inventing ad hoc commands:

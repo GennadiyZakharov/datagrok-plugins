@@ -1,0 +1,41 @@
+{
+  "name": "paramreference",
+  "friendlyName": "paramreference",
+  "version": "0.0.1",
+  "description": "Paramreference package",
+  "dependencies": {
+    "datagrok-api": "^1.26.0",
+    "cash-dom": "^8.1.5",
+    "dayjs": "^1.11.13",
+    "@datagrok-libraries/test": "^1.1.0"
+  },
+  "devDependencies": {
+    "datagrok-tools": "^5.1.5",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "ts-loader": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "debug-paramreference": "webpack && grok publish",
+    "release-paramreference": "webpack && grok publish --release",
+    "build-paramreference": "webpack",
+    "build": "grok api && grok check --soft && webpack",
+    "test": "grok test",
+    "debug-paramreference-dev": "webpack && grok publish dev",
+    "release-paramreference-dev": "webpack && grok publish dev --release",
+    "debug-paramreference-local": "webpack && grok publish local",
+    "release-paramreference-local": "webpack && grok publish local --release"
+  },
+  "canEdit": [
+    "Developers"
+  ],
+  "canView": [
+    "All users"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GennadiyZakharov/datagrok-plugins.git",
+    "directory": "packages/Paramreference"
+  }
+}
