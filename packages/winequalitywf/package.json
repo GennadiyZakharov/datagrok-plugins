@@ -4,16 +4,16 @@
   "version": "0.0.1",
   "description": "",
   "dependencies": {
-    "@datagrok-libraries/compute-api": "^0.6.3",
-    "@datagrok-libraries/utils": "^4.4.0",
-    "cash-dom": "^8.1.4",
-    "datagrok-api": "^1.21.3",
-    "dayjs": "=1.11.10"
+    "@datagrok-libraries/compute-api": "^0.6.8",
+    "@datagrok-libraries/utils": "^4.7.1",
+    "cash-dom": "^8.1.5",
+    "datagrok-api": "^1.27.0",
+    "dayjs": "1.11.19"
   },
   "devDependencies": {
-    "datagrok-tools": "latest",
-    "ts-loader": "latest",
-    "typescript": "latest",
+    "datagrok-tools": "^5.1.5",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.9.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   },
